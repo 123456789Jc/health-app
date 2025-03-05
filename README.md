@@ -1,2 +1,0 @@
-# health-app
-Mobile app

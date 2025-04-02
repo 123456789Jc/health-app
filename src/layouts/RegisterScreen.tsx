@@ -6,7 +6,7 @@ export default function RegisterScreen({onClose}:any){
 
         <View>
              <Text>singn up </Text>
-             <TouchableOpacity onPress={onClose}> 
+             <TouchableOpacity onPress={onClose}/> 
                 <Text>Back to login</Text>
         </View>
     );

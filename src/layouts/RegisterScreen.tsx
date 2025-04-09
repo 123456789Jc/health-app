@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import{View, Text, TextInput, TouchableOpacity, StyleSheet} from "react-native"
-import {supabase} from"..//supabaseClient";
+import { supabase } from "../supabaseClient"; 
+
 
 export default function RegisterScreen({onClose}:any){
     const[email,setEmail] = useState("");
@@ -15,12 +16,12 @@ export default function RegisterScreen({onClose}:any){
         setErrorMessage("");
     
 
-    const(data,error) = await supabase.auth.singUp({
+    const{data,error} = await supabase.auth.singUp({
         email,password
     });
 
-    if (error){
-        setErrorMessage(error.messages);
+    if (error) {
+        setErrorMessage(error.message); 
         setLoading(false);
         return;
     }
@@ -38,13 +39,13 @@ export default function RegisterScreen({onClose}:any){
     )}
 
     setLoading(false);
-    if(InsertError){
-        setErrorMessage(InsertError.messages);
-
-    }else{
-        alert("user has been create succesfuly")
-        onClose();
-    }
+        if (insertError) {
+            setErrorMessage(insertError.message); 
+        } else {
+            alert("User  has been created successfully"); 
+            onClose();
+        }
+    };
 
     return(
 

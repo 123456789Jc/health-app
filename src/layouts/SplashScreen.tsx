@@ -1,25 +1,20 @@
-import { useEffect, useState } from "react";
-import { View, Image, StyleSheet } from "react-native";
-import LoginScreen from "./LoginScreen";
-
-export default function SplashScreen(){
-    const [showLogin, setShowLogin] = useState(false);
-
-    useEffect(()=>{
-        const timer = setTimeout(()=>{
-            setShowLogin(true);
-        },3000); // 3 seconds
-
-        return () => clearTimeout(timer);
-    },[]);
-
-    if(showLogin){
-        return <>LoginScreen</>
+    if (showLogin) {
+        return <LoginScreen />; // Return the LoginScreen component
     }
-
     return (
-        <View>
-            <Image source={require("../assets/logo.png")} />
+        <View style={styles.container}>
+            <Image source={require("../assets/images/icon.png")} style={styles.icon} />
         </View>
     );
-};
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    icon: {
+        width: 100, // Adjust width as needed
+        height: 100, // Adjust height as needed
+    },
+});

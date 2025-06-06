@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio de Servicios Médicos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS Variables for colors and spacing */
+    :root {
+      --color-bg: #ffffff;
+      --color-primary: #111827;
+      --color-secondary: #6b7280;
+      --color-accent: #2563eb;
+      --color-card-bg: #f9fafb;
+      --color-shadow: rgba(0,0,0,0.05);
+      --font-heading: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --radius: 0.75rem;
+      --spacing-lg: 4rem;
+      --spacing-md: 2rem;
+      --spacing-sm: 1rem;
+      --transition-fast: 0.25s ease-in-out;
+    }
+
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: var(--color-bg);
+      font-family: var(--font-body);
+      color: var(--color-secondary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--color-bg);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 10;
+      box-shadow: 0 2px 4px var(--color-shadow);
+    }
+
+        nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      padding: 0 var(--spacing-md);
+    }
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      user-select: none;
+    }
+
+     .nav-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    .nav-link {
+      font-weight: 600;
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color var(--transition-fast);
+    }
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: var(--spacing-lg) 0 var(--spacing-lg);
+      color: var(--color-primary);
+    }
+    .hero h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--color-secondary);
+      margin-bottom: var(--spacing-md);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-primary {
+      font-weight: 700;
+      font-size: 1.125rem;
+      padding: 0.75rem 2rem;
+      background: var(--color-accent);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background-color var(--transition-fast);
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+    }
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background-color: #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    /* Portfolio grid */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-md);
+      padding-bottom: var(--spacing-lg);
+    }
+    /* Card */
+    .card {
+      background: var(--color-card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px var(--color-shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-
+
+      }
+    .card:hover,
+    .card:focus-within {
+      box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+    }
+      
+     
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+
+      .card-content {
+      padding: var(--spacing-md);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+   
+     .card-content {
+      padding: var(--spacing-md);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-primary);
+      margin: 0 0 0.5rem 0;
+    }
+    .card-description {
+      flex-grow: 1;
+      color: var(--color-secondary);
+      font-size: 1rem;
+      margin-bottom: var(--spacing-sm);
+    }
+    /* Card footer with icons and info */
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+    .card-footer svg {
+      vertical-align: middle;
+      height: 20px;
+      width: 20px;
+      margin-right: 0.3rem;
+      stroke: var(--color-accent);
+      stroke-width: 2;
+      fill: none;
+    }
+
+     /* Footer */
+    footer {
+      text-align: center;
+      color: var(--color-secondary);
+      padding: var(--spacing-md);
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .btn-primary {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
+
+    </style>
+</head>
+<body>
+  <header role="banner">
+    <nav class="container" aria-label="Primary navigation">
+      <div class="logo" tabindex="0">HealthApp</div>
+      <div class="nav-links">
+        <a href="#portfolio" class="nav-link" tabindex="0">Servicios</a>
+        <a href="#about" class="nav-link" tabindex="0">Acerca</a>
+        <a href="#contact" class="nav-link" tabindex="0">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" role="region" aria-labelledby="hero-title">
+      <h1 id="hero-title">Tu portafolio integral de servicios médicos</h1>
+      <p>Explora una amplia variedad de especialidades y encuentra el cuidado que necesitas de manera fácil y confiable.</p>
+      <button class="btn-primary" aria-label="Explora nuestros servicios">Explorar Servicios</button>
+    </section>
+    <section id="portfolio" class="container" role="region" aria-labelledby="portfolio-title" tabindex="0">
+      <h2 id="portfolio-title" style="text-align:center; color:#111827; font-weight: 700; font-size: 2rem; margin-bottom: 2rem;">
+        Nuestros Servicios Médicos
+      </h2>
+
+      <div class="portfolio" role="list">
+        <article class="card" role="listitem" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1586772006485-9db8aa2f903d?auto=format&fit=crop&w=600&q=60" alt="Consulta médica" />
+          <div class="card-content">
+            <h3 class="card-title">Consulta General</h3>
+            <p class="card-description">Atención médica general para todas las edades, diagnóstico y tratamiento personalizado.</p>
+            <div class="card-footer">
+              <svg aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <span>Horario flex.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" role="listitem" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1588776814546-9c3386cdb19d?auto=format&fit=crop&w=600&q=60" alt="Medicina familiar" />
+          <div class="card-content">
+            <h3 class="card-title">Medicina Familiar</h3>
+            <p class="card-description">Cuidado integral para toda la familia con prevención y seguimiento continuo.</p>
+            <div class="card-footer">
+              <svg aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9 12h6"></path>
+                <path d="M12 9v6"></path>
+              </svg>
+              <span>Atención 24/7</span>
+            </div>
+          </div>
+        </article>
+
+         <article class="card" role="listitem" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1588776814545-df96582eaa38?auto=format&fit=crop&w=600&q=60" alt="Exámenes de laboratorio" />
+          <div class="card-content">
+            <h3 class="card-title">Exámenes de Laboratorio</h3>
+            <p class="card-description">Análisis clínicos completos con resultados precisos y rápidos.</p>
+            <div class="card-footer">
+              <svg aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12h8"></path>
+                <path d="M12 8v8"></path>
+              </svg>
+              <span>Resultados en 24h</span>
+            </div>
+          </div>
+        </article>
+
+         <article class="card" role="listitem" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1588776814549-32aabffb8b14?auto=format&fit=crop&w=600&q=60" alt="Cuidado pediátrico" />
+          <div class="card-content">
+            <h3 class="card-title">Pediatría</h3>
+            <p class="card-description">Atención especializada para el bienestar de tus hijos desde sus primeros días.</p>
+            <div class="card-footer">
+              <svg aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9 15l3-3 3 3"></path>
+              </svg>
+              <span>Especialistas certificados</span>
+            </div>
+          </div>
+        </article>
+
+         <article class="card" role="listitem" tabindex="0">
+          <img src="https://images.unsplash.com/photo-1588776814548-7639345d470f?auto=format&fit=crop&w=600&q=60" alt="Atención nutricional" />
+          <div class="card-content">
+            <h3 class="card-title">Nutrición</h3>
+            <p class="card-description">Planes nutricionales personalizados para una vida saludable y activa.</p>
+            <div class="card-footer">
+              <svg aria-hidden="true" focusable="false" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 15h8"></path>
+                <path d="M12 9v6"></path>
+              </svg>
+              <span>Consultas presenciales y virtuales</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="container" role="region" aria-labelledby="about-title" tabindex="0" style="padding-bottom: var(--spacing-lg); color: var(--color-primary);">
+      <h2 id="about-title" style="font-weight: 700; font-size: 2rem; margin-bottom: 1rem;">Acerca de HealthApp</h2>
+      <p>Somos una plataforma dedicada a ofrecer servicios médicos de alta calidad, accesibles y confiables. Nuestro equipo está compuesto por profesionales comprometidos con tu bienestar.</p>
+    </section>
+    <section id="contact" class="container" role="region" aria-labelledby="contact-title" tabindex="0" style="padding-bottom: var(--spacing-lg); color: var(--color-primary);">
+      <h2 id="contact-title" style="font-weight: 700; font-size: 2rem; margin-bottom: 1rem;">Contacto</h2>
+      <p>Para consultas y reservas, contáctanos al correo <a href="mailto:contacto@healthapp.com">contacto@healthapp.com</a> o al teléfono <a href="tel:+123456789">+1 234 567 89</a>.</p>
+    </section>
+  </main>
+  
+  <footer>
+    © 2024 HealthApp. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
